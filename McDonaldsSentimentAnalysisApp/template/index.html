@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonald's Review Sentiment Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='mcdonalds-logo.png') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="{{ url_for('static', filename='mcdonalds-logo.png') }}" alt="McDonald's Logo" class="logo">
+            <h1>McDonald's Review Sentiment Analyzer</h1>
+        </header>
+        
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Review Analysis Form</h2>
+            </div>
+            
+            <form action="/predict" method="post" id="review-form">
+                <div class="form-group">
+                    <label for="review">Your Review:</label>
+                    <textarea id="review" name="review" rows="6" required>{{ review_text or "" }}</textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="store_location">Store Location:</label>
+                    <select id="store_location" name="store_location" required>
+                        {% for location in store_locations %}
+                            <option value="{{ location }}" {% if selected_store == location %}selected{% endif %}>{{ location }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="visit_time">When did you visit?</label>
+                    <select id="visit_time" name="visit_time" required>
+                        {% for time in visit_times %}
+                            <option value="{{ time }}" {% if selected_visit == time %}selected{% endif %}>{{ time }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="analyze-btn">Analyze Sentiment</button>
+                </div>
+            </form>
+        </div>
+        
+        {% if prediction %}
+        <div class="result-container">
+            <h2>Analysis Result</h2>
+            <div class="result {% if prediction == 'Positive' %}positive{% elif prediction == 'Negative' %}negative{% else %}neutral{% endif %}">
+                <div class="sentiment">{{ prediction }}</div>
+            </div>
+        </div>
+        {% endif %}
+        
+        {% if error %}
+        <div class="error-container">
+            <h2>Error</h2>
+            <div class="error">
+                {{ error }}
+            </div>
+        </div>
+        {% endif %}
+    </div>
 
+    <footer>
+        <p>© 2025 McDonald's Sentiment Analysis | Developed for Educational Purposes</p>
+    </footer>
+    
+    <script>
+        // Add event listener to prevent empty form submissions
+        document.getElementById('review-form').addEventListener('submit', function(e) {
+            const reviewText = document.getElementById('review').value.trim();
+            if (!reviewText) {
+                e.preventDefault();
+                alert('Please enter a review before submitting.');
+            }
+        });
+    </script>
+</body>
+</html>
