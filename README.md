@@ -2,6 +2,19 @@
 
 This repository contains a Flask web application that analyzes McDonald's restaurant reviews and predicts sentiment as negative (-1), neutral (0), or positive (1).
 
+## Table of Contents
+
+- [Literature Survey & References](#literature-survey--references)
+- [Project Structure](#project-structure)
+- [Running the App in VS Code](#running-the-app-in-vs-code)
+  - [Open the Project](#1-open-the-project)
+  - [Set Up a Virtual Environment](#2-set-up-a-virtual-environment)
+  - [Install Required Dependencies](#3-install-required-dependencies)
+  - [Run the Application](#4-run-the-application)
+  - [Access the Web Interface](#5-access-the-web-interface)
+- [Troubleshooting](#troubleshooting)
+- [Notes for Developers](#notes-for-developers)
+
 ## Literature Survey & References
 
 This project was inspired by and references the following research papers:
