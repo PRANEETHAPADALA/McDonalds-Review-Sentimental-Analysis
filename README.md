@@ -3,15 +3,15 @@
 This repository contains a Flask web application that analyzes McDonald's restaurant reviews and predicts sentiment as negative (-1), neutral (0), or positive (1).
 
 ## Table of Contents
-
 - [Literature Survey & References](#literature-survey--references)
 - [Project Structure](#project-structure)
+- [Assignment Files](#assignment-files)
 - [Running the App in VS Code](#running-the-app-in-vs-code)
-  - [Open the Project](#1-open-the-project)
-  - [Set Up a Virtual Environment](#2-set-up-a-virtual-environment)
-  - [Install Required Dependencies](#3-install-required-dependencies)
-  - [Run the Application](#4-run-the-application)
-  - [Access the Web Interface](#5-access-the-web-interface)
+  - [1. Open the Project](#1-open-the-project)
+  - [2. Set Up a Virtual Environment](#2-set-up-a-virtual-environment)
+  - [3. Install Required Dependencies](#3-install-required-dependencies)
+  - [4. Run the Application](#4-run-the-application)
+  - [5. Access the Web Interface](#5-access-the-web-interface)
 - [Troubleshooting](#troubleshooting)
 - [Notes for Developers](#notes-for-developers)
 
@@ -30,6 +30,12 @@ This project was inspired by and references the following research papers:
 ```
 McDonaldsSentimentAnalysisApp/
 │
+├── Assignment_files/
+│   ├── ML_Theory_Assignment1.ipynb
+│   ├── ML_Theory_Assignment2.ipynb
+│   ├── Mini_Project_final_notebook.ipynb
+│   └── McDonald_s_Reviews.csv
+│
 ├── static/
 │   ├── mcdonalds-logo.png
 │   └── style.css
@@ -47,6 +53,17 @@ McDonaldsSentimentAnalysisApp/
 ├── requirements.txt
 └── vectorizer.pkl
 ```
+
+## Assignment Files
+
+The `Assignment_files` folder contains the Jupyter notebooks and dataset used in the development of this project:
+
+- **ML_Theory_Assignment1.ipynb**: Initial machine learning theory assignment
+- **ML_Theory_Assignment2.ipynb**: Follow-up machine learning theory assignment
+- **Mini_Project_final_notebook.ipynb**: The complete sentiment analysis project notebook with all data processing, model training, and evaluation steps
+- **McDonald_s_Reviews.csv**: The dataset containing McDonald's restaurant reviews used for training and testing the model
+
+These files document the progression of the project from theory to implementation and provide insight into the development process of the sentiment analysis model.
 
 ## Running the App in VS Code
 
